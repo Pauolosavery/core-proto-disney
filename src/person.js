@@ -8,10 +8,8 @@ function Person(name,watchedMovies) {
   
   this.name = name;
   this.watchedMovies = watchedMovies;
-
-  // watchMovie: function () {
-  //   play
-  // }
+  this.watchedMovies.toString = function (){
+  return watchedMovies.map((el, index) => `${index + 1} ${el.title}`).join('\n')}
 }
 
 Person.prototype.watchMovie = function (movie) {

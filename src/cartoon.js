@@ -5,7 +5,7 @@
  * @param {boolean} forChildren - true/false
  * @param {string} beginning - Several words from the beginning of the cartoon
  */
-function Cartoon(title, year, forChildren = true, beginning = 'Long, long ago...') {
+function Cartoon(title, year, forChildren = true, beginning = 'Long, long ago in a faraway land...') {
   this.title = title;
   this.year = year;
   this.forChildren = forChildren;
@@ -21,6 +21,7 @@ Cartoon.prototype.play = function () {
     this.studio,
     this.title,
     this.beginning,
+    this.studioLogo,
   ].join('\n');
 };
 
@@ -31,10 +32,10 @@ Object.setPrototypeOf(DreamWorksCartoon.prototype, Cartoon.prototype)
  * Мульт студии Walt Disney.
  */
 function DisneyCartoon(title, year, forChildren, beginning) {
-  Cartoon.call(this, title, year)
+  Cartoon.call(this, title, year, forChildren, beginning)
   // this.title = title;
-  // this.year = year;
-  this.beginning = beginning;
+  this.studioLogo = '🏰🌠';
+  // this.beginning = beginning;
   this.studio = 'Walt Disney';
 }
 
@@ -42,9 +43,9 @@ function DisneyCartoon(title, year, forChildren, beginning) {
  * Мульт студии DreamWorks.
  */
 function DreamWorksCartoon(title, year, forChildren, beginning) {
-  Cartoon.call(this, title, year)
+  Cartoon.call(this, title, year, forChildren, beginning)
   // this.title = title;
-  // this.year = year;
+  this.studioLogo = '🌙';
   this.forChildren = forChildren;
   this.studio = 'DreamWorks';
 }
