@@ -1,5 +1,3 @@
-const pavel = 'teamlid';
-
 /**
  * Мультфильм.
  * @param {string} title - Name of the cartoon
@@ -26,12 +24,16 @@ Cartoon.prototype.play = function () {
   ].join('\n');
 };
 
+Object.setPrototypeOf(DisneyCartoon.prototype, Cartoon.prototype)
+Object.setPrototypeOf(DreamWorksCartoon.prototype, Cartoon.prototype)
+
 /**
  * Мульт студии Walt Disney.
  */
 function DisneyCartoon(title, year, forChildren, beginning) {
-  this.title = title;
-  this.year = year;
+  Cartoon.call(this, title, year)
+  // this.title = title;
+  // this.year = year;
   this.beginning = beginning;
   this.studio = 'Walt Disney';
 }
@@ -40,8 +42,9 @@ function DisneyCartoon(title, year, forChildren, beginning) {
  * Мульт студии DreamWorks.
  */
 function DreamWorksCartoon(title, year, forChildren, beginning) {
-  this.title = title;
-  this.year = year;
+  Cartoon.call(this, title, year)
+  // this.title = title;
+  // this.year = year;
   this.forChildren = forChildren;
   this.studio = 'DreamWorks';
 }
