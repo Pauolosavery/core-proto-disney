@@ -1,3 +1,5 @@
+const pavel = 'teamlid';
+
 /**
  * Мультфильм.
  * @param {string} title - Name of the cartoon
